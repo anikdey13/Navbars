@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,700;1,400;1,700&family=Hubballi&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+html{
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    overflow-x: hidden;
+}
+body{
+    overflow-x: hidden;
+}
+header {
+    padding: 0 4.8rem;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e7f5ff;
+}
+.logo {
+    width: 20rem;
+    height: auto;
+}
+.navbar{}
+.navbar-list{
+    display: flex;
+    gap: 4rem;
+    list-style: none;
+}
+.navbar-list{}
+.navbar-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #212529;
+    font-size: 2rem;
+    transition: all 0.3s;
+}
+.navbar-link:hover, .navbar-link:active{
+    color: #364fc7;
+}
+.banner, .services{
+    padding: 10rem;
+    background-color: #a5d8ff;
+    height: 60vh;
+    font-size: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.services{
+    background-color: #f3f0ff;
+}
+.mobile-navbar-btn {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+}
+.mobile-nav-icon{
+    width: 4rem;
+    font-size: 3rem;
+    color: #212529;
+}
+.mobile-nav-icon[name='close-outline']{
+    display: none;
+}
+/* ================
+    Responsive Codes
+    ================== */
+
+    /* 980px */
+@media(max-width: 62em){
+    .mobile-navbar-btn{
+        text-align: center;
+        display: block;
+        z-index: 999;
+        border: 2px solid #212529;
+        color: #212529;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .header{
+        position: relative;
+    }
+    .navbar{
+        /* display: none; */
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #e7f5ff;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    .navbar-list{
+        flex-direction: column;
+        align-items: center;
+    }
+    .active .navbar{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .active .mobile-navbar-btn .mobile-nav-icon[name='menu-outline']{
+        display: none;
+    }
+    .active .mobile-navbar-btn .mobile-nav-icon[name='close-outline']{
+        display: block;
+    }
+}
+
+
+@media(max-width: 30em){
+    .header{
+        padding: 0 3rem;
+    }
+}
